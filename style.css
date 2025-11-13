@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,63 +8,105 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: white;
+  height: 100vh;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  transition: background 0.5s ease;
-  background: linear-gradient(to right, #6dd5fa, #2980b9);
+  transition: background 1s ease-in-out;
 }
 
-.container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  width: 400px;
   text-align: center;
-  width: 320px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 input {
-  width: 70%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   outline: none;
-  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px 12px;
-  margin: 5px;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
-  background: #3498db;
-  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #36D1DC, #5B86E5);
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #2980b9;
+  background: linear-gradient(90deg, #5B86E5, #36D1DC);
+  transform: scale(1.05);
 }
 
-.hidden {
-  display: none;
+.weather-card {
+  margin-top: 15px;
+  animation: fadeIn 1s ease;
+}
+
+.weather-card img {
+  width: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.weather-card p {
+  font-size: 18px;
+  margin: 5px 0;
 }
 
 .error {
-  color: #ffcccc;
-  margin-top: 10px;
-}
-
-.fade {
-  animation: fadeIn 0.7s ease;
+  color: #ff4b5c;
+  font-weight: 600;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
